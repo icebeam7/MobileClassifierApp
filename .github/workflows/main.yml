@@ -21,17 +21,6 @@ jobs:
         cd ..
         ls
 
-  Android:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Android
-        run: |
-          cd MobileClassifierApp
-          nuget restore
-          cd MobileClassifierApp.Android
-          msbuild MobileClassifierApp.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
-
   iOS:
     runs-on: macos-latest
     steps:
